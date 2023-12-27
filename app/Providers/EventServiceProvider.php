@@ -18,6 +18,18 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        JourneyCreated::class => [
+            CreateTrips::class,
+        ],
+        TripCreated::class => [
+            CreateSeats::class,
+        ],
+        BookingMade::class => [
+            UpdateSeats::class,
+        ],
+        BookingCancelled::class => [
+            AvailSeats::class,
+        ],
     ];
 
     /**
